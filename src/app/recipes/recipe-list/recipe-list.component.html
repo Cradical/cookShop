@@ -7,27 +7,10 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <a
-        href="#"
-        class="list-group-item clearfix"
-        *ngFor="let recipe of recipes; index as i"
-      >
-        <div class="row">
-          <div class="col align-item-start">
-            <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
-            <p class="list-group-item-text">{{ recipe.description }}</p>
-          </div>
-          <span class="col align-item-end">
-            <img
-              src="{{ recipe.imagePath }}"
-              alt=""
-              class="img-responsive rounded float-right"
-              style="max-height: 50px"
-            />
-          </span>
-        </div>
-      </a>
-      <app-recipe-item></app-recipe-item>
+      <app-recipe-item
+        *ngFor="let recipeEl of recipes"
+        [recipe]="recipeEl"
+      ></app-recipe-item>
     </div>
   </div>
 </div>

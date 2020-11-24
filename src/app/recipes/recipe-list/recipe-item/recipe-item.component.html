@@ -1,1 +1,22 @@
-<p>recipe-item works!</p>
+<div class="container">
+  <a
+    href="#"
+    class="list-group-item list-group-item-action"
+    (click)="onSelected()"
+  >
+    <div class="row">
+      <div class="col align-item-start">
+        <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+        <p class="list-group-item-text">{{ recipe.description }}</p>
+      </div>
+      <span class="col align-item-end">
+        <img
+          src="{{ recipe.imagePath }}"
+          alt=""
+          class="img-responsive rounded float-right"
+          style="max-height: 50px"
+        />
+      </span>
+    </div>
+  </a>
+</div>
