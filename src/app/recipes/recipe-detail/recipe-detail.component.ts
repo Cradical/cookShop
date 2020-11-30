@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RecipeService } from 'src/app/services/recipe.service';
+import { ShoppingListService } from 'src/app/services/shopping-list.service';
+import { Ingredient } from 'src/app/shared/ingredient.model';
 
 import { Recipe } from '../recipe.model';
 @Component({
@@ -10,9 +12,11 @@ import { Recipe } from '../recipe.model';
 export class RecipeDetailComponent implements OnInit {
   @Input() recipe: Recipe;
 
-  constructor(private recipeService: RecipeService) {}
+  constructor(private slService: ShoppingListService) {}
 
-  ngOnInit(): void {
-    console.log('detail comp mounted');
+  ngOnInit(): void {}
+
+  onAddIngredientsToShoppingList() {
+    this.slService.handleAddRecipeIngredients(this.recipe.ingredients);
   }
 }
